@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>画像確認用｜株式会社中島屋</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+      background: #f7f4ee;
+      color: #222;
+      line-height: 1.7;
+    }
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    .lead { color: #5f5a54; margin: 0 0 28px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd6ca;
+      padding: 18px;
+    }
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid #e8e1d6;
+      background: #eee;
+    }
+    .card h2 {
+      font-size: 20px;
+      margin: 14px 0 4px;
+    }
+    .file {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+      color: #6b4a2f;
+      margin: 0 0 10px;
+      word-break: break-all;
+    }
+    .note {
+      font-size: 14px;
+      color: #5f5a54;
+      margin: 0;
+    }
+    .check {
+      margin-top: 12px;
+      padding: 12px 14px;
+      background: #f7f4ee;
+      border-left: 3px solid #6b4a2f;
+      font-size: 14px;
+    }
+    @media (max-width: 780px) {
+      .grid { grid-template-columns: 1fr; }
+      .card img { height: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>画像確認用ページ</h1>
+    <p class="lead">本番ナビには出していない確認用ページです。商品名と写真内容が合っているか、写真の切れ方に違和感がないかを確認するためのページです。</p>
+
+    <div class="grid">
+      <section class="card">
+        <img src="assets/img/warehouse-pallets.jpg" alt="トップ・お問い合わせで使用する倉庫内パレット写真">
+        <h2>トップ・お問い合わせ用</h2>
+        <p class="file">assets/img/warehouse-pallets.jpg</p>
+        <p class="note">トップのメイン写真と、お問い合わせページ右側写真で使用。</p>
+        <div class="check">確認点：中島屋の実態に合う写真か。パレット・木材資材の会社として自然に見えるか。</div>
+      </section>
+
+      <section class="card">
+        <img src="assets/img/warehouse-wide.jpg" alt="会社概要で使用する作業場または資材置き場写真">
+        <h2>会社概要用</h2>
+        <p class="file">assets/img/warehouse-wide.jpg</p>
+        <p class="note">会社概要ページの写真で使用。</p>
+        <div class="check">確認点：作業場・資材置き場として自然か。会社概要に置いて違和感がないか。</div>
+      </section>
+
+      <section class="card">
+        <img src="assets/img/product-pallets.jpg" alt="木製パレットの写真">
+        <h2>木製パレット</h2>
+        <p class="file">assets/img/product-pallets.jpg</p>
+        <p class="note">トップの商品カード、取扱商品ページの木製パレット欄で使用。</p>
+        <div class="check">確認点：木製パレットと分かる写真か。物流用パレットの説明と合っているか。</div>
+      </section>
+
+      <section class="card">
+        <img src="assets/img/product-lumber.jpg" alt="角材・板材の写真">
+        <h2>角材・板材</h2>
+        <p class="file">assets/img/product-lumber.jpg</p>
+        <p class="note">トップの商品カード、取扱商品ページの角材・板材欄で使用。</p>
+        <div class="check">確認点：角材・板材として見えるか。丸太や合板に見えてしまわないか。</div>
+      </section>
+
+      <section class="card">
+        <img src="assets/img/product-plywood.jpg" alt="合板・ベニヤの写真">
+        <h2>合板・ベニヤ</h2>
+        <p class="file">assets/img/product-plywood.jpg</p>
+        <p class="note">トップの商品カード、取扱商品ページの合板・ベニヤ欄で使用。</p>
+        <div class="check">確認点：合板・ベニヤとして見えるか。板材・角材と見分けがつくか。</div>
+      </section>
+
+      <section class="card">
+        <img src="assets/img/product-logs.jpg" alt="丸太杭・丸太の写真">
+        <h2>丸太杭・丸太</h2>
+        <p class="file">assets/img/product-logs.jpg</p>
+        <p class="note">トップの商品カード、取扱商品ページの丸太杭・丸太欄で使用。</p>
+        <div class="check">確認点：丸太杭・丸太として見えるか。土木・仮設用途の説明と合っているか。</div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
