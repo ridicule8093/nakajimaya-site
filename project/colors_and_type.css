@@ -1,0 +1,244 @@
+/*
+ * 中島屋 Design System — Color & Typography tokens
+ *
+ * 現行サイト assets/css/style.css の値を整理し、3 方向 (A/B/C) で共有する
+ * トークン定義。すべての UI kit / preview がここを参照する。
+ *
+ * 命名規則:
+ *   --nks-{role}-{tone}    色（fg / bg / line / accent）
+ *   --nks-font-{role}      フォントスタック
+ *   --nks-size-{step}      タイプスケール
+ *   --nks-space-{step}     余白
+ *   --nks-radius-{step}    角丸
+ *   --nks-shadow-{step}    影
+ *
+ * セマンティック変数:
+ *   --h1 / --h2 / --h3 / --body / --small / --eyebrow など
+ */
+
+:root {
+  /* ─────────────────────────────
+   * COLORS — base
+   * ───────────────────────────── */
+
+  /* 紙色のホワイト系。純白(#fff)は基本使わない */
+  --nks-bg-paper: #fbfaf6;     /* メインBG・生成り */
+  --nks-bg-surface: #ffffff;   /* カード内側のみ純白許容 */
+  --nks-bg-muted: #f5f1e9;     /* セクション交互の薄ベージュ */
+  --nks-bg-tint: #efe8dc;      /* ヒーローの紙色グラデ終点 */
+  --nks-bg-ink: #1f1c19;       /* フッター・ダーク帯 */
+
+  /* 文字色 */
+  --nks-fg-strong: #1f1c19;    /* 見出し・本文（ほぼ墨） */
+  --nks-fg-body:   #2b2723;    /* 本文（ややリラックス） */
+  --nks-fg-muted:  #5c5650;    /* 補助文・lead・キャプション */
+  --nks-fg-faint:  #8a8278;    /* table label / disabled */
+  --nks-fg-onDark: rgba(255,255,255,0.92); /* ダーク背景上 */
+  --nks-fg-onDark-muted: rgba(255,255,255,0.7);
+
+  /* 罫線 */
+  --nks-line-strong: #c8c1b3;
+  --nks-line: #ddd6ca;
+  --nks-line-faint: #ece6d8;
+
+  /* ─────────────────────────────
+   * COLORS — accents
+   * 茶 (wood) + 緑 (forest) の 2 軸。
+   * ───────────────────────────── */
+
+  --nks-wood-50:  #f3ece1;
+  --nks-wood-100: #e2d3bb;
+  --nks-wood-300: #b58c63;
+  --nks-wood-500: #6b4a2f;    /* primary 茶 = 既存 --accent */
+  --nks-wood-700: #4c3422;    /* hover / press = 既存 --accent-dark */
+  --nks-wood-900: #2d1f15;
+
+  --nks-forest-100: #d8e0d9;
+  --nks-forest-300: #6b8478;
+  --nks-forest-500: #2f4a3b;  /* secondary 深緑 = 既存 --green */
+  --nks-forest-700: #1f3328;
+
+  /* セマンティック（ステータス）— BtoB なので控えめに */
+  --nks-warn: #a85a1a;        /* 注意（熱処理証明書必要 等の注記） */
+  --nks-info: #2a4a6b;        /* 情報補足 */
+
+  /* ─────────────────────────────
+   * Aliases — 既存コードとの互換
+   * （現行 style.css の --bg, --text 等を本トークンに置換する用）
+   * ───────────────────────────── */
+  --bg: var(--nks-bg-paper);
+  --surface: var(--nks-bg-surface);
+  --muted: var(--nks-bg-muted);
+  --text: var(--nks-fg-strong);
+  --subtext: var(--nks-fg-muted);
+  --border: var(--nks-line);
+  --accent: var(--nks-wood-500);
+  --accent-dark: var(--nks-wood-700);
+  --green: var(--nks-forest-500);
+
+  /* ─────────────────────────────
+   * TYPOGRAPHY — families
+   * ───────────────────────────── */
+
+  /* Body — 全方向共通の system stack。日本語は Hiragino → Yu Gothic */
+  --nks-font-body:
+    "Noto Sans JP",
+    -apple-system, BlinkMacSystemFont,
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", "YuGothic", "Meiryo",
+    sans-serif;
+
+  /* 方向 A 用 明朝（老舗・地場の落ち着き） */
+  --nks-font-serif:
+    "Noto Serif JP",
+    "Hiragino Mincho ProN", "Yu Mincho", "YuMincho",
+    "Shippori Mincho", serif;
+
+  /* 英数のみ（数値や eyebrow ラベルに使う） */
+  --nks-font-latin:
+    "Inter",
+    -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+
+  /* ヘッディング選択 — 方向ごとに :root[data-direction="a|b|c"] で上書き */
+  --nks-font-heading: var(--nks-font-body);
+
+  /* ─────────────────────────────
+   * TYPE SCALE
+   * 1.20 minor third を基本。h1 のみ clamp で拡張。
+   * ───────────────────────────── */
+  --nks-size-eyebrow: 0.78rem;   /* 12.5px 相当、英数ラベル */
+  --nks-size-small:   0.86rem;   /* 13.8px キャプション・note */
+  --nks-size-body:    1.00rem;   /* 16px 本文 */
+  --nks-size-lead:    1.08rem;   /* 17.3px リード */
+  --nks-size-h3:      1.15rem;   /* 18.4px */
+  --nks-size-h2:      clamp(1.5rem, 2.4vw, 2rem);    /* 24-32 */
+  --nks-size-h1:      clamp(1.85rem, 4vw, 3rem);     /* 30-48 */
+  --nks-size-hero:    clamp(2.1rem, 5vw, 3.4rem);    /* hero専用 */
+
+  /* line-height — 日本語向けにやや広め */
+  --nks-lh-body: 1.85;
+  --nks-lh-heading: 1.45;
+  --nks-lh-tight: 1.25;
+
+  /* letter-spacing */
+  --nks-tracking-eyebrow: 0.14em;
+  --nks-tracking-heading: 0.02em;
+  --nks-tracking-body: 0.01em;
+
+  /* font-weight */
+  --nks-weight-regular: 400;
+  --nks-weight-medium: 500;
+  --nks-weight-bold: 700;
+
+  /* ─────────────────────────────
+   * SPACING — 4px ベース
+   * ───────────────────────────── */
+  --nks-space-1: 4px;
+  --nks-space-2: 8px;
+  --nks-space-3: 12px;
+  --nks-space-4: 16px;
+  --nks-space-5: 24px;
+  --nks-space-6: 32px;
+  --nks-space-7: 48px;
+  --nks-space-8: 64px;
+  --nks-space-9: 96px;
+
+  /* セクション縦余白 (PC / SP の clamp) */
+  --nks-section-py: clamp(48px, 7vw, 72px);
+
+  /* container */
+  --nks-container: min(1120px, calc(100% - 40px));
+  --nks-container-narrow: min(840px, calc(100% - 40px));
+
+  /* ─────────────────────────────
+   * RADIUS — 4-10px に統一 (現行の 14-22px は大きすぎ)
+   * ───────────────────────────── */
+  --nks-radius-sm: 2px;
+  --nks-radius-md: 4px;     /* ボタン / 入力 / 表組 */
+  --nks-radius-lg: 6px;     /* カード */
+  --nks-radius-xl: 10px;    /* 写真 */
+  --nks-radius-pill: 999px; /* 角ピル CTA 用 (optional) */
+
+  /* ─────────────────────────────
+   * SHADOW — 控えめ
+   * ───────────────────────────── */
+  --nks-shadow-none: 0 0 0 transparent;
+  --nks-shadow-line: inset 0 0 0 1px var(--nks-line);
+  --nks-shadow-sm: 0 1px 0 rgba(31,28,25,0.04);
+  --nks-shadow-md: 0 4px 12px rgba(40,30,20,0.08);  /* 写真用 */
+  --nks-shadow-lg: 0 8px 24px rgba(40,30,20,0.10);  /* sticky header drop など限定 */
+}
+
+/* ─────────────────────────────
+ * Direction overrides
+ * 各 UI kit ルートに data-direction="a|b|c" を付ければ
+ * ヘッディング書体だけ差し替わる
+ * ───────────────────────────── */
+:root[data-direction="a"] {
+  --nks-font-heading: var(--nks-font-serif);
+}
+:root[data-direction="b"],
+:root[data-direction="c"] {
+  --nks-font-heading: var(--nks-font-body);
+}
+
+/* ─────────────────────────────
+ * Semantic element defaults
+ * これを base レイヤーとして読み込めば、素の HTML が
+ * デザインシステムどおりに見える。
+ * ───────────────────────────── */
+body {
+  font-family: var(--nks-font-body);
+  font-size: var(--nks-size-body);
+  line-height: var(--nks-lh-body);
+  letter-spacing: var(--nks-tracking-body);
+  color: var(--nks-fg-body);
+  background: var(--nks-bg-paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--nks-font-heading);
+  color: var(--nks-fg-strong);
+  line-height: var(--nks-lh-heading);
+  letter-spacing: var(--nks-tracking-heading);
+  font-weight: var(--nks-weight-bold);
+  margin: 0 0 0.6em;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--nks-size-h1); }
+h2 { font-size: var(--nks-size-h2); }
+h3 { font-size: var(--nks-size-h3); }
+
+p {
+  margin: 0 0 1em;
+  text-wrap: pretty;
+}
+
+.eyebrow,
+[data-role="eyebrow"] {
+  font-family: var(--nks-font-latin);
+  font-size: var(--nks-size-eyebrow);
+  font-weight: var(--nks-weight-bold);
+  letter-spacing: var(--nks-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--nks-wood-500);
+  margin: 0 0 12px;
+  display: block;
+}
+
+.lead,
+[data-role="lead"] {
+  font-size: var(--nks-size-lead);
+  color: var(--nks-fg-muted);
+  line-height: 1.9;
+}
+
+small,
+.small,
+[data-role="small"] {
+  font-size: var(--nks-size-small);
+  color: var(--nks-fg-muted);
+}

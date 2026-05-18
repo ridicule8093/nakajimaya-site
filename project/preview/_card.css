@@ -1,0 +1,41 @@
+/* preview/_card.css — shared base for all preview cards */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&family=Inter:wght@400;500;700&display=swap');
+@import url('../colors_and_type.css');
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: #fbfaf6;
+  font-family: var(--nks-font-body);
+  color: var(--nks-fg-strong);
+}
+body {
+  padding: 20px 24px;
+}
+.card-row { display: flex; gap: 14px; align-items: stretch; }
+.swatch {
+  flex: 1;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 11px;
+  color: var(--nks-fg-strong);
+  font-family: var(--nks-font-latin);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 90px;
+  border: 1px solid var(--nks-line);
+}
+.swatch .hex { opacity: .7; font-size: 10px; }
+.swatch .name { font-weight: 700; font-size: 11px; letter-spacing: .04em; }
+.swatch[data-on="dark"] { color: rgba(255,255,255,.94); border-color: rgba(255,255,255,.12); }
+.swatch[data-on="dark"] .hex { opacity: .8; }
+.row-label {
+  font-family: var(--nks-font-latin);
+  font-size: 10px;
+  letter-spacing: .16em;
+  color: var(--nks-fg-muted);
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  font-weight: 700;
+}

@@ -1,0 +1,446 @@
+/* Direction A — 堅実な木材会社・製材業寄り
+ * 明朝見出し / 罫線中心 / 角丸ほぼ無し / 横長帯のページタイトル
+ * 写真は中サイズ、文字組重視
+ */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  --bg: #fbfaf6;
+  --surface: #ffffff;
+  --muted: #f5f1e9;
+  --tint: #efe8dc;
+  --text: #1f1c19;
+  --body: #2b2723;
+  --subtext: #5c5650;
+  --faint: #8a8278;
+  --line: #ddd6ca;
+  --line-strong: #c8c1b3;
+  --line-faint: #ece6d8;
+  --wood: #6b4a2f;
+  --wood-dark: #4c3422;
+  --wood-darker: #2d1f15;
+  --forest: #2f4a3b;
+  --ink: #1f1c19;
+  --warn: #a85a1a;
+
+  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --sans:  "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --latin: "Inter", -apple-system, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.85;
+  letter-spacing: .01em;
+  color: var(--body);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+p  { margin: 0 0 1em; text-wrap: pretty; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: .03em;
+  line-height: 1.45;
+  margin: 0 0 .6em;
+  text-wrap: balance;
+}
+h1 { font-size: clamp(28px, 4.4vw, 44px); }
+h2 { font-size: clamp(22px, 2.6vw, 30px); }
+h3 { font-size: 17px; }
+
+.eyebrow {
+  font-family: var(--latin);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--wood);
+  margin: 0 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  width: 24px; height: 1px;
+  background: var(--wood);
+  display: inline-block;
+}
+
+.container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+.narrow    { max-width: 760px; }
+
+/* ─────────────── Header — 細い罫線・明朝ロゴ ─────────────── */
+.site-header {
+  position: sticky; top: 0; z-index: 30;
+  background: rgba(251,250,246,.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  min-height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: .08em;
+  color: var(--text);
+}
+.logo small {
+  font-family: var(--latin);
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: var(--faint);
+  font-weight: 500;
+  display: block;
+  margin-top: -2px;
+}
+.nav {
+  display: flex; gap: 28px;
+  font-size: 14px;
+  color: var(--subtext);
+}
+.nav a { padding: 4px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+.nav a:hover, .nav a.is-active { color: var(--wood); border-bottom-color: var(--wood); }
+.header-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--latin); font-size: 12px; letter-spacing: .12em;
+  font-weight: 700; color: var(--text);
+  padding: 8px 14px; border: 1px solid var(--ink);
+  text-transform: uppercase;
+}
+.header-cta:hover { background: var(--ink); color: #fff; }
+
+/* ─────────────── Page-title bar (帯) ─────────────── */
+.title-bar {
+  background: var(--ink);
+  color: #fff;
+  padding: 8px 0;
+  font-family: var(--latin);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.title-bar .container { display: flex; gap: 24px; align-items: center; }
+.title-bar .crumb { opacity: .6; }
+.title-bar .crumb-sep { opacity: .3; }
+
+/* ─────────────── Hero ─────────────── */
+.hero {
+  padding: 72px 0 56px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #fbfaf6 0%, #efe8dc 100%);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  gap: 48px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: clamp(30px, 5vw, 50px);
+  line-height: 1.35;
+}
+.hero .lead {
+  font-size: 16px;
+  color: var(--subtext);
+  line-height: 1.95;
+  max-width: 560px;
+}
+.hero-meta {
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  font-size: 13px;
+  color: var(--subtext);
+}
+.hero-meta dt { font-family: var(--latin); font-size: 10px; letter-spacing: .18em; color: var(--faint); text-transform: uppercase; margin-bottom: 2px; }
+.hero-meta dd { margin: 0; color: var(--text); }
+.hero-actions { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+.hero-photo {
+  height: 420px;
+  border-radius: 4px;
+  background: url('../../assets/img/warehouse-pallets.jpg') center/cover;
+  border: 1px solid var(--line);
+  position: relative;
+}
+.hero-photo::after {
+  /* 落款風コーナーマーク */
+  content: "中島屋";
+  position: absolute;
+  right: 14px; bottom: 14px;
+  font-family: var(--serif);
+  font-size: 11px;
+  letter-spacing: .2em;
+  background: rgba(31,28,25,.85);
+  color: #fff;
+  padding: 6px 10px;
+}
+
+/* ─────────────── Buttons ─────────────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px;
+  padding: 0 24px;
+  font-family: var(--sans);
+  font-size: 14px; font-weight: 700;
+  letter-spacing: .04em;
+  border: 1px solid var(--wood);
+  background: var(--wood);
+  color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.btn:hover { background: var(--wood-dark); border-color: var(--wood-dark); }
+.btn.secondary { background: transparent; color: var(--wood-dark); }
+.btn.secondary:hover { background: var(--wood); color: #fff; }
+.btn.ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--ink);
+}
+.btn.ghost:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.btn::after {
+  content: "→";
+  margin-left: 10px;
+  font-family: var(--latin);
+  font-weight: 400;
+}
+.btn.no-arrow::after { content: none; }
+
+/* ─────────────── Section base ─────────────── */
+.section { padding: clamp(56px, 7vw, 80px) 0; }
+.section.muted { background: var(--muted); border-top: 1px solid var(--line-faint); border-bottom: 1px solid var(--line-faint); }
+.section-head { margin-bottom: 36px; }
+.section-head h2 { margin: 0; }
+.section-head p { color: var(--subtext); margin-top: 8px; max-width: 720px; }
+
+/* ─────────────── Products — 罫線テーブル状 ─────────────── */
+.product-table {
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line-strong);
+}
+.product-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 240px;
+  gap: 32px;
+  align-items: center;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.product-row:last-child { border-bottom: none; }
+.product-row .thumb {
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+.product-row .body h3 {
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+.product-row .body .ja-sub {
+  font-family: var(--latin);
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: var(--wood);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+.product-row .body p {
+  margin: 0;
+  color: var(--subtext);
+  font-size: 14.5px;
+  line-height: 1.8;
+}
+.product-row .spec {
+  font-size: 13px;
+  color: var(--subtext);
+  border-left: 1px solid var(--line);
+  padding-left: 20px;
+}
+.product-row .spec dt { font-family: var(--latin); font-size: 10px; letter-spacing: .14em; color: var(--faint); text-transform: uppercase; margin-bottom: 2px; }
+.product-row .spec dd { margin: 0 0 8px; color: var(--text); }
+
+/* Consultation row — その他 */
+.product-row.consult { background: var(--bg); }
+.product-row.consult .thumb {
+  background: var(--muted);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--wood-dark);
+  border: 1px dashed var(--line-strong);
+}
+
+/* ─────────────── About — 縦書き的キャプション ─────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(280px, 1.05fr);
+  gap: 56px;
+  align-items: start;
+}
+.about-body p { color: var(--body); font-size: 16px; line-height: 1.95; }
+.about-photo {
+  height: 360px;
+  background: url('../../assets/img/warehouse-wide.jpg') center/cover;
+  border-radius: 2px;
+  border: 1px solid var(--line);
+}
+.about-caption {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--subtext);
+  margin-top: 8px;
+  letter-spacing: .04em;
+}
+
+/* ─────────────── Strength ─────────────── */
+.strength-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--ink);
+}
+.strength-list > li {
+  padding: 28px 24px 28px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.strength-list > li:nth-child(odd) { padding-right: 32px; border-right: 1px solid var(--line); }
+.strength-list > li:nth-child(even) { padding-left: 32px; }
+.strength-list .num {
+  font-family: var(--latin);
+  font-size: 11px;
+  letter-spacing: .2em;
+  color: var(--wood);
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: block;
+}
+.strength-list h3 {
+  font-size: 19px;
+  margin: 0 0 10px;
+}
+.strength-list p {
+  margin: 0;
+  color: var(--subtext);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* ─────────────── Flow ─────────────── */
+.flow-table {
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line-strong);
+}
+.flow-row {
+  display: grid;
+  grid-template-columns: 80px 200px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+.flow-row:last-child { border-bottom: none; }
+.flow-row .step {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--wood);
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.flow-row h3 { font-size: 17px; margin: 0; }
+.flow-row p { margin: 0; color: var(--subtext); font-size: 14.5px; line-height: 1.85; }
+
+/* ─────────────── CTA + Footer ─────────────── */
+.cta-strip {
+  background: var(--ink);
+  color: #fff;
+  padding: 48px 0;
+}
+.cta-strip .container {
+  display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;
+}
+.cta-strip h2 { color: #fff; margin: 0; font-size: 26px; }
+.cta-strip .eyebrow { color: rgba(255,255,255,.65); }
+.cta-strip .eyebrow::before { background: rgba(255,255,255,.5); }
+.cta-strip p { margin: 6px 0 0; color: rgba(255,255,255,.7); font-size: 14px; }
+.cta-strip .btn { background: #fff; color: var(--ink); border-color: #fff; }
+.cta-strip .btn:hover { background: var(--wood); color: #fff; border-color: var(--wood); }
+
+.contact-strip {
+  padding: 40px 0;
+  background: var(--muted);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.contact-strip .container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.contact-strip .col h3 { font-family: var(--sans); font-size: 13px; letter-spacing: .12em; margin: 0 0 8px; color: var(--faint); text-transform: uppercase; font-weight: 700; font-family: var(--latin); }
+.contact-strip .col p { margin: 0; color: var(--text); }
+.contact-strip .col .tel { font-family: var(--serif); font-size: 26px; font-weight: 700; letter-spacing: .02em; color: var(--text); }
+.contact-strip .col .email { font-family: var(--latin); font-size: 15px; color: var(--text); word-break: break-all; }
+
+.site-footer {
+  background: #14110f;
+  color: rgba(255,255,255,.7);
+  padding: 36px 0 28px;
+  font-size: 13px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 28px;
+  margin-bottom: 24px;
+}
+.footer-grid .brand { font-family: var(--serif); font-size: 18px; color: #fff; letter-spacing: .08em; }
+.footer-grid h4 { font-family: var(--latin); font-size: 10px; letter-spacing: .2em; color: rgba(255,255,255,.5); margin: 0 0 10px; text-transform: uppercase; }
+.footer-grid ul li { margin-bottom: 4px; }
+.footer-grid a:hover { color: #fff; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 18px;
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  font-size: 11px;
+  color: rgba(255,255,255,.45);
+  font-family: var(--latin);
+  letter-spacing: .08em;
+}
+
+/* ─────────────── Responsive ─────────────── */
+@media (max-width: 900px) {
+  .hero-grid, .about-grid { grid-template-columns: 1fr; }
+  .hero-photo { height: 280px; }
+  .product-row { grid-template-columns: 1fr; gap: 14px; }
+  .product-row .thumb { height: 200px; }
+  .product-row .spec { border-left: none; border-top: 1px solid var(--line); padding: 12px 0 0 0; }
+  .strength-list { grid-template-columns: 1fr; }
+  .strength-list > li { padding: 22px 0 !important; border-right: none !important; }
+  .flow-row { grid-template-columns: 60px 1fr; }
+  .flow-row h3 { grid-column: 2; }
+  .flow-row p { grid-column: 2; }
+  .contact-strip .container { grid-template-columns: 1fr; gap: 18px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav { display: none; }
+}
