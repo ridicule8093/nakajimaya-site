@@ -192,6 +192,7 @@ h3 { font-size: 17px; }
   color: #fff;
   padding: 6px 10px;
 }
+.home-hero .hero-photo { height: 460px; }
 
 /* ─────────────── Buttons ─────────────── */
 .btn {
@@ -231,6 +232,56 @@ h3 { font-size: 17px; }
 .section-head { margin-bottom: 36px; }
 .section-head h2 { margin: 0; }
 .section-head p { color: var(--subtext); margin-top: 8px; max-width: 720px; }
+.section-head-row {
+  display: grid;
+  grid-template-columns: minmax(240px, .55fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: end;
+}
+.section-head-row p { margin: 0; max-width: none; }
+.section-action { margin-top: 28px; text-align: right; }
+
+/* ─────────────── Home product overview ─────────────── */
+.product-overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: transform .15s, border-color .15s;
+}
+.product-card:hover { transform: translateY(-2px); border-color: var(--wood); }
+.product-card-photo {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--line);
+}
+.product-card-body { padding: 18px; }
+.product-card-body span {
+  display: block;
+  font-family: var(--latin);
+  font-size: 10px;
+  letter-spacing: .18em;
+  color: var(--wood);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.product-card-body h3 { font-size: 19px; margin-bottom: 8px; }
+.product-card-body p { color: var(--subtext); font-size: 14px; line-height: 1.75; margin: 0; }
+.consult-card {
+  justify-content: center;
+  background: var(--ink);
+  color: #fff;
+}
+.consult-card h3 { color: #fff; }
+.consult-card p { color: rgba(255,255,255,.72); }
+.consult-card .product-card-body span { color: rgba(255,255,255,.6); }
 
 /* ─────────────── Products — 罫線テーブル状 ─────────────── */
 .product-table {
@@ -327,7 +378,8 @@ h3 { font-size: 17px; }
 }
 .strength-list > li:nth-child(odd) { padding-right: 32px; border-right: 1px solid var(--line); }
 .strength-list > li:nth-child(even) { padding-left: 32px; }
-.strength-list .num {
+.strength-list .num,
+.usecase-grid .num {
   font-family: var(--latin);
   font-size: 11px;
   letter-spacing: .2em;
@@ -346,6 +398,19 @@ h3 { font-size: 17px; }
   font-size: 14px;
   line-height: 1.85;
 }
+.usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line-strong);
+}
+.usecase-grid article {
+  padding: 24px 20px;
+  border-right: 1px solid var(--line);
+}
+.usecase-grid article:last-child { border-right: none; }
+.usecase-grid h3 { font-size: 18px; margin-bottom: 8px; }
+.usecase-grid p { color: var(--subtext); font-size: 14px; line-height: 1.75; margin: 0; }
 
 /* ─────────────── Flow ─────────────── */
 .flow-table {
@@ -431,16 +496,27 @@ h3 { font-size: 17px; }
 /* ─────────────── Responsive ─────────────── */
 @media (max-width: 900px) {
   .hero-grid, .about-grid { grid-template-columns: 1fr; }
-  .hero-photo { height: 280px; }
+  .hero-photo, .home-hero .hero-photo { height: 280px; }
+  .section-head-row { grid-template-columns: 1fr; gap: 10px; }
+  .product-overview { grid-template-columns: 1fr 1fr; }
   .product-row { grid-template-columns: 1fr; gap: 14px; }
   .product-row .thumb { height: 200px; }
   .product-row .spec { border-left: none; border-top: 1px solid var(--line); padding: 12px 0 0 0; }
   .strength-list { grid-template-columns: 1fr; }
   .strength-list > li { padding: 22px 0 !important; border-right: none !important; }
+  .usecase-grid { grid-template-columns: 1fr 1fr; }
+  .usecase-grid article { border-bottom: 1px solid var(--line); }
+  .usecase-grid article:nth-child(even) { border-right: none; }
   .flow-row { grid-template-columns: 60px 1fr; }
   .flow-row h3 { grid-column: 2; }
   .flow-row p { grid-column: 2; }
   .contact-strip .container { grid-template-columns: 1fr; gap: 18px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .nav { display: none; }
+}
+
+@media (max-width: 620px) {
+  .product-overview, .usecase-grid { grid-template-columns: 1fr; }
+  .usecase-grid article { border-right: none; }
+  .footer-grid { grid-template-columns: 1fr; }
 }
