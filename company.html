@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>会社概要・お問い合わせ｜株式会社中島屋</title>
-  <meta name="description" content="株式会社中島屋の会社概要・お問い合わせページです。愛知県弥富市を拠点に、昭和47年（1972年）設立。木製パレット製造、木材販売、木製梱包資材の取り扱いを行っています。">
+  <title>会社概要｜株式会社中島屋</title>
+  <meta name="description" content="株式会社中島屋の会社概要ページです。愛知県弥富市を拠点に、昭和47年（1972年）設立。木製パレット、木材販売、木材資材の取り扱いを行っています。">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     .company-table {
@@ -33,76 +33,7 @@
       background: transparent;
     }
     .company-table td { color: var(--text); }
-
-    .contact-checklist {
-      border-top: 2px solid var(--ink);
-      border-bottom: 1px solid var(--line-strong);
-    }
-    .contact-checklist li {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: 30px 200px 1fr;
-      gap: 16px;
-      align-items: baseline;
-      font-size: 14.5px;
-    }
-    .contact-checklist li:last-child { border-bottom: none; }
-    .contact-checklist .idx {
-      font-family: var(--latin);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      color: var(--wood);
-    }
-    .contact-checklist .key { font-weight: 700; color: var(--text); }
-    .contact-checklist .desc { color: var(--subtext); font-size: 13.5px; line-height: 1.75; }
-
-    .contact-block {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr);
-      gap: 56px;
-      align-items: start;
-    }
-    .contact-card-large {
-      border-top: 2px solid var(--ink);
-      padding-top: 24px;
-    }
-    .contact-card-large dl { margin: 0; }
-    .contact-card-large dl > div {
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .contact-card-large dl > div:last-child { border-bottom: none; }
-    .contact-card-large dt {
-      font-family: var(--latin);
-      font-size: 11px;
-      letter-spacing: .16em;
-      color: var(--subtext);
-      text-transform: uppercase;
-      font-weight: 700;
-      margin: 0 0 8px;
-    }
-    .contact-card-large dd {
-      margin: 0;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: .02em;
-    }
-    .contact-card-large dd.email { font-family: var(--latin); font-size: 16px; word-break: break-all; }
-    .contact-card-large dd.tel { font-family: var(--serif); font-size: 28px; }
-    .contact-card-large .note {
-      font-size: 12.5px;
-      color: var(--subtext);
-      margin-top: 6px;
-      font-weight: 400;
-      letter-spacing: 0;
-    }
-
     @media (max-width: 900px) {
-      .contact-block { grid-template-columns: 1fr; gap: 32px; }
-      .contact-checklist li { grid-template-columns: 1fr; gap: 4px; }
       .company-table th { width: auto; display: block; padding-bottom: 4px; }
       .company-table td { display: block; padding-top: 4px; }
     }
@@ -116,7 +47,7 @@
     <span class="crumb-sep">／</span>
     <span class="crumb">Est. 1972 · Yatomi, Aichi</span>
     <span class="crumb-sep">／</span>
-    <span class="crumb">Company / Contact</span>
+    <span class="crumb">Company</span>
     <span style="margin-left:auto" class="crumb">TEL 0567-68-4506</span>
   </div>
 </div>
@@ -130,9 +61,10 @@
     <nav class="nav" aria-label="主要ナビゲーション">
       <a href="index.html">ホーム</a>
       <a href="products.html">取扱商品</a>
-      <a href="company.html" class="is-active">会社概要・お問い合わせ</a>
+      <a href="company.html" class="is-active">会社概要</a>
+      <a href="contact.html">お問い合わせ</a>
     </nav>
-    <a href="#contact" class="header-cta">Contact</a>
+    <a href="contact.html" class="header-cta">Contact</a>
   </div>
 </header>
 
@@ -141,8 +73,8 @@
 <section class="hero" style="padding:56px 0 40px">
   <div class="container">
     <span class="eyebrow">Company</span>
-    <h1 style="font-size:clamp(28px,4vw,42px)">会社概要・お問い合わせ</h1>
-    <p class="lead" style="max-width:820px">木製パレット・木材資材・熱処理対応資材については、お問い合わせください。用途・寸法・数量・納品条件などを確認のうえ、対応可否や見積についてご案内いたします。</p>
+    <h1 style="font-size:clamp(28px,4vw,42px)">会社概要</h1>
+    <p class="lead" style="max-width:820px">株式会社中島屋は、愛知県弥富市を拠点に、木製パレット、木材販売、木材資材の取り扱いを行っています。</p>
   </div>
 </section>
 
@@ -150,15 +82,14 @@
   <div class="container about-grid">
     <div class="about-body">
       <span class="eyebrow">Profile</span>
-      <h2>会社概要</h2>
+      <h2>基本情報</h2>
       <table class="company-table">
         <tbody>
           <tr><th>会社名</th><td>株式会社中島屋</td></tr>
           <tr><th>設立</th><td>昭和47年（1972年）</td></tr>
           <tr><th>所在地</th><td>愛知県弥富市楠1丁目9番地</td></tr>
-          <tr><th>事業内容</th><td>木製パレット製造、木材販売、木製梱包資材の取り扱い</td></tr>
-          <tr><th>主な取扱品目</th><td>木製パレット、角材・板材、合板・ベニヤ、丸太杭・丸太、その他木材資材<br>輸出向けワンウェイ／熱処理対応 ご相談</td></tr>
-          <tr><th>配送</th><td>自社4tトラックでの配送に対応</td></tr>
+          <tr><th>事業内容</th><td>木製パレット、木材販売、木材資材の取り扱い</td></tr>
+          <tr><th>主な取扱品目</th><td>木製パレット、角材・板材、合板・ベニヤ、丸太杭・丸太、その他木材資材</td></tr>
           <tr><th>電話番号</th><td><a href="tel:0567684506" style="border-bottom:1px solid var(--line)">0567-68-4506</a></td></tr>
           <tr><th>メール</th><td><a href="mailto:nks_se@gray.plala.or.jp" style="border-bottom:1px solid var(--line);font-family:var(--latin)">nks_se@gray.plala.or.jp</a></td></tr>
         </tbody>
@@ -171,55 +102,14 @@
   </div>
 </section>
 
-<section class="section muted" id="contact">
+<section class="cta-strip">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Before Contact</span>
-      <h2>ご相談時に確認したいこと</h2>
-      <p>分かる範囲で結構です。未確定の項目があっても、用途と条件を確認しながら対応可否を検討いたします。</p>
-    </div>
-    <ul class="contact-checklist">
-      <li><span class="idx">01</span><span class="key">仕様・用途</span><span class="desc">必要な寸法、仕様、使用用途、積載物、既存品の有無など。</span></li>
-      <li><span class="idx">02</span><span class="key">数量・納品条件</span><span class="desc">必要数量、納品頻度、納品先、希望納期、継続利用の有無など。</span></li>
-      <li><span class="idx">03</span><span class="key">輸出・書類対応</span><span class="desc">熱処理の要否、証明書類の要否、輸出向けか国内向けかなど。</span></li>
-      <li><span class="idx">04</span><span class="key">参考資料</span><span class="desc">図面、写真、過去に使用しているパレットや資材の情報があれば確認しやすくなります。</span></li>
-      <li><span class="idx">05</span><span class="key">連絡手段</span><span class="desc">電話・メールどちらでも結構です。添付物がある場合はメールが進めやすいです。</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head">
+    <div>
       <span class="eyebrow">Contact</span>
-      <h2>お問い合わせ先</h2>
-      <p>お急ぎの場合はお電話にてご連絡ください。メールの場合は、用途・寸法・数量・納品条件などを分かる範囲でご記載いただけると、ご案内が早くなります。</p>
+      <h2>木製パレット・木材資材についてご相談ください。</h2>
+      <p>用途・寸法・数量・納品条件などを分かる範囲でお知らせください。</p>
     </div>
-    <div class="contact-block">
-      <div class="contact-card-large">
-        <dl>
-          <div>
-            <dt>Tel · 電話</dt>
-            <dd class="tel"><a href="tel:0567684506">0567-68-4506</a></dd>
-            <p class="note">平日・営業時間内にご連絡ください。</p>
-          </div>
-          <div>
-            <dt>Email · メール</dt>
-            <dd class="email"><a href="mailto:nks_se@gray.plala.or.jp">nks_se@gray.plala.or.jp</a></dd>
-            <p class="note">用途・寸法・数量・納品条件が分かる範囲でご記載ください。</p>
-          </div>
-          <div>
-            <dt>Address · 所在地</dt>
-            <dd style="font-size:17px">愛知県弥富市楠1丁目9番地</dd>
-            <p class="note">配送相談は自社4tトラック対応エリアをご確認のうえお伝えください。</p>
-          </div>
-        </dl>
-      </div>
-      <div>
-        <div class="about-photo" style="height:420px;background-image:url('assets/img/warehouse-pallets.jpg')" role="img" aria-label="弊社作業場の木製パレットスタック"></div>
-        <p class="about-caption">― 木製パレットの積み置き</p>
-      </div>
-    </div>
+    <a href="contact.html" class="btn">お問い合わせへ</a>
   </div>
 </section>
 
@@ -230,14 +120,15 @@
     <div class="footer-grid">
       <div>
         <div class="brand">株式会社中島屋</div>
-        <p style="margin-top:8px">昭和47年（1972年）設立<br>愛知県弥富市楠1丁目9番地<br>木製パレット製造／木材販売／木製梱包資材</p>
+        <p style="margin-top:8px">昭和47年（1972年）設立<br>愛知県弥富市楠1丁目9番地<br>木製パレット／木材販売／木材資材</p>
       </div>
       <div>
         <h4>Sitemap</h4>
         <ul>
           <li><a href="index.html">ホーム</a></li>
           <li><a href="products.html">取扱商品</a></li>
-          <li><a href="company.html">会社概要・お問い合わせ</a></li>
+          <li><a href="company.html">会社概要</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
         </ul>
       </div>
       <div>
