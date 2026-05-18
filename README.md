@@ -1,25 +1,64 @@
-# CODING AGENTS: READ THIS FIRST
+# nakajimaya-site
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+株式会社中島屋の静的コーポレートサイト制作リポジトリです。
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## 概要
 
-## What you should do — IMPORTANT
+愛知県弥富市を拠点に、木製パレット製造、木材販売、木製梱包資材の取り扱いを行う株式会社中島屋の会社案内サイトです。
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+初期構成は以下の3ページです。
 
-**Find the primary design file under `project/` and read it top to bottom.** The chat transcripts will tell you which file the user was last iterating on. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+- `index.html`：トップページ
+- `products.html`：取扱商品ページ
+- `company.html`：会社概要・お問い合わせページ
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+## ファイル構成
 
-## About the design files
+```text
+/
+├── index.html
+├── products.html
+├── company.html
+├── SITE_SPEC.md
+├── CONTENT.md
+├── CODEX_TASK.md
+├── README.md
+└── assets/
+    └── css/
+        └── style.css
+```
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+## 確認方法
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+ブラウザで `index.html` を開くと表示確認できます。
 
-## Bundle contents
+GitHub PagesまたはCloudflare Pagesに接続すれば、そのまま静的サイトとして公開できます。
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `中島屋 Design System` project files (HTML prototypes, assets, components)
+## 画像差し替え
+
+現時点では実画像を使わず、CSSのプレースホルダーで仮表示しています。
+
+後から差し替える候補は以下です。
+
+- 木製パレット
+- パレットの積み上げ
+- 木材資材
+- 工場、倉庫、作業場の雰囲気
+- トラック、物流、納品前の資材
+- 会社外観
+
+画像を入れる場合は `assets/img/` を作成し、HTML内の `.image-placeholder` 部分を `img` タグに差し替えてください。
+
+## 公開前に確認する項目
+
+- 電話番号
+- メールアドレス
+- 問い合わせフォームを設置するか
+- 写真素材
+- 独自ドメイン
+- Google検索登録
+- Googleビジネスプロフィールとの整合
+
+## 注意事項
+
+実績、取引先名、認証、保証、許認可、品質規格などは、確認できるもの以外を記載しない方針です。
