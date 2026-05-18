@@ -59,11 +59,10 @@ h2 { font-size: clamp(22px, 2.6vw, 30px); }
 h3 { font-size: 17px; }
 
 .eyebrow {
-  font-family: var(--latin);
-  font-size: 12px;
+  font-family: var(--sans);
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
+  letter-spacing: .08em;
   color: var(--wood);
   margin: 0 0 14px;
   display: inline-flex;
@@ -100,9 +99,9 @@ h3 { font-size: 17px; }
   color: var(--text);
 }
 .logo small {
-  font-family: var(--latin);
-  font-size: 10px;
-  letter-spacing: .2em;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: .08em;
   color: var(--faint);
   font-weight: 500;
   display: block;
@@ -117,10 +116,9 @@ h3 { font-size: 17px; }
 .nav a:hover, .nav a.is-active { color: var(--wood); border-bottom-color: var(--wood); }
 .header-cta {
   display: inline-flex; align-items: center; gap: 6px;
-  font-family: var(--latin); font-size: 12px; letter-spacing: .12em;
+  font-family: var(--sans); font-size: 13px; letter-spacing: .08em;
   font-weight: 700; color: var(--text);
   padding: 8px 14px; border: 1px solid var(--ink);
-  text-transform: uppercase;
 }
 .header-cta:hover { background: var(--ink); color: #fff; }
 
@@ -129,13 +127,12 @@ h3 { font-size: 17px; }
   background: var(--ink);
   color: #fff;
   padding: 8px 0;
-  font-family: var(--latin);
+  font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
+  letter-spacing: .08em;
 }
 .title-bar .container { display: flex; gap: 24px; align-items: center; }
-.title-bar .crumb { opacity: .6; }
+.title-bar .crumb { opacity: .72; }
 .title-bar .crumb-sep { opacity: .3; }
 
 /* ─────────────── Hero ─────────────── */
@@ -170,7 +167,7 @@ h3 { font-size: 17px; }
   font-size: 13px;
   color: var(--subtext);
 }
-.hero-meta dt { font-family: var(--latin); font-size: 10px; letter-spacing: .18em; color: var(--faint); text-transform: uppercase; margin-bottom: 2px; }
+.hero-meta dt { font-size: 12px; letter-spacing: .08em; color: var(--faint); margin-bottom: 2px; font-weight: 700; }
 .hero-meta dd { margin: 0; color: var(--text); }
 .hero-actions { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
 .hero-photo {
@@ -267,7 +264,7 @@ h3 { font-size: 17px; }
   display: block;
   font-family: var(--latin);
   font-size: 10px;
-  letter-spacing: .18em;
+  letter-spacing: .12em;
   color: var(--wood);
   font-weight: 700;
   margin-bottom: 8px;
@@ -309,13 +306,13 @@ h3 { font-size: 17px; }
   margin: 0 0 4px;
 }
 .product-row .body .ja-sub {
-  font-family: var(--latin);
-  font-size: 11px;
-  letter-spacing: .16em;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: .08em;
   color: var(--wood);
-  text-transform: uppercase;
   margin-bottom: 8px;
   display: block;
+  font-weight: 700;
 }
 .product-row .body p {
   margin: 0;
@@ -329,7 +326,7 @@ h3 { font-size: 17px; }
   border-left: 1px solid var(--line);
   padding-left: 20px;
 }
-.product-row .spec dt { font-family: var(--latin); font-size: 10px; letter-spacing: .14em; color: var(--faint); text-transform: uppercase; margin-bottom: 2px; }
+.product-row .spec dt { font-size: 12px; letter-spacing: .06em; color: var(--faint); margin-bottom: 2px; font-weight: 700; }
 .product-row .spec dd { margin: 0 0 8px; color: var(--text); }
 
 /* Consultation row — その他 */
@@ -382,7 +379,7 @@ h3 { font-size: 17px; }
 .usecase-grid .num {
   font-family: var(--latin);
   font-size: 11px;
-  letter-spacing: .2em;
+  letter-spacing: .12em;
   color: var(--wood);
   font-weight: 700;
   margin-bottom: 10px;
@@ -446,7 +443,7 @@ h3 { font-size: 17px; }
   display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;
 }
 .cta-strip h2 { color: #fff; margin: 0; font-size: 26px; }
-.cta-strip .eyebrow { color: rgba(255,255,255,.65); }
+.cta-strip .eyebrow { color: rgba(255,255,255,.72); }
 .cta-strip .eyebrow::before { background: rgba(255,255,255,.5); }
 .cta-strip p { margin: 6px 0 0; color: rgba(255,255,255,.7); font-size: 14px; }
 .cta-strip .btn { background: #fff; color: var(--ink); border-color: #fff; }
@@ -464,7 +461,7 @@ h3 { font-size: 17px; }
   gap: 32px;
   align-items: start;
 }
-.contact-strip .col h3 { font-family: var(--sans); font-size: 13px; letter-spacing: .12em; margin: 0 0 8px; color: var(--faint); text-transform: uppercase; font-weight: 700; font-family: var(--latin); }
+.contact-strip .col h3 { font-family: var(--sans); font-size: 13px; letter-spacing: .08em; margin: 0 0 8px; color: var(--faint); font-weight: 700; }
 .contact-strip .col p { margin: 0; color: var(--text); }
 .contact-strip .col .tel { font-family: var(--serif); font-size: 26px; font-weight: 700; letter-spacing: .02em; color: var(--text); }
 .contact-strip .col .email { font-family: var(--latin); font-size: 15px; color: var(--text); word-break: break-all; }
@@ -480,7 +477,7 @@ h3 { font-size: 17px; }
   margin-bottom: 24px;
 }
 .footer-grid .brand { font-family: var(--serif); font-size: 18px; color: #fff; letter-spacing: .08em; }
-.footer-grid h4 { font-family: var(--latin); font-size: 10px; letter-spacing: .2em; color: rgba(255,255,255,.5); margin: 0 0 10px; text-transform: uppercase; }
+.footer-grid h4 { font-family: var(--sans); font-size: 13px; letter-spacing: .08em; color: rgba(255,255,255,.55); margin: 0 0 10px; }
 .footer-grid ul li { margin-bottom: 4px; }
 .footer-grid a:hover { color: #fff; }
 .footer-bottom {
@@ -489,8 +486,7 @@ h3 { font-size: 17px; }
   display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
   font-size: 11px;
   color: rgba(255,255,255,.45);
-  font-family: var(--latin);
-  letter-spacing: .08em;
+  letter-spacing: .04em;
 }
 
 /* ─────────────── Responsive ─────────────── */
