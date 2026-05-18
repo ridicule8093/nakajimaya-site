@@ -151,7 +151,7 @@ h3 {
   background: var(--accent);
   color: #fff;
   font-weight: 700;
-  border: 1px solid var(--accent);
+ border: 1px solid var(--accent);
   box-shadow: 0 8px 20px rgba(76, 52, 34, 0.16);
 }
 
@@ -212,18 +212,62 @@ h3 {
   font-size: 0.96rem;
 }
 
-.thumb {
-  height: 132px;
-  border-radius: 14px;
-  margin-bottom: 16px;
-}
-
+.photo,
 .placeholder-small,
 .image-placeholder {
   background:
     linear-gradient(135deg, rgba(107, 74, 47, 0.18), rgba(47, 74, 59, 0.12)),
     repeating-linear-gradient(45deg, rgba(107, 74, 47, 0.06) 0 10px, rgba(255, 255, 255, 0.16) 10px 20px);
   border: 1px solid var(--border);
+}
+
+.photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo span {
+  display: none;
+}
+
+.hero-photo {
+  min-height: 440px;
+  border-radius: 22px;
+  background-image: url('../img/hero-pallets.jpg');
+  box-shadow: var(--shadow);
+}
+
+.company-photo {
+  min-height: 360px;
+  border-radius: 22px;
+  background-image: url('../img/company-yard.jpg');
+  box-shadow: var(--shadow);
+}
+
+.thumb {
+  height: 132px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+.thumb-pallets {
+  background-image: url('../img/product-pallets.jpg');
+}
+
+.thumb-warehouse-pallets {
+  background-image: url('../img/warehouse-pallets.jpg');
+}
+
+.thumb-hero-pallets {
+  background-image: url('../img/hero-pallets.jpg');
+}
+
+.thumb-lumber {
+  background-image: url('../img/product-lumber.jpg');
 }
 
 .image-placeholder {
@@ -422,6 +466,38 @@ h3 {
   color: var(--subtext);
 }
 
+.product-photo {
+  min-height: 210px;
+}
+
+.product-photo-pallets {
+  background-image: url('../img/product-pallets.jpg');
+}
+
+.product-photo-warehouse {
+  background-image: url('../img/warehouse-pallets.jpg');
+}
+
+.product-photo-heat {
+  background-image: url('../img/hero-pallets.jpg');
+}
+
+.product-photo-logs {
+  background-image: url('../img/product-logs.jpg');
+}
+
+.product-photo-lumber {
+  background-image: url('../img/product-lumber.jpg');
+}
+
+.product-photo-plywood {
+  background-image: url('../img/product-plywood.jpg');
+}
+
+.product-photo-boards {
+  background-image: url('../img/product-boards.jpg');
+}
+
 .company-table {
   width: 100%;
   border-collapse: collapse;
@@ -543,7 +619,7 @@ h3 {
     grid-template-columns: 1fr 1fr;
   }
 
-  .image-placeholder.large {
+  .hero-photo {
     min-height: 300px;
   }
 
