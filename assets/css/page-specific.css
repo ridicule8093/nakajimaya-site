@@ -104,6 +104,21 @@
   letter-spacing: 0;
 }
 
+.product-row.consult {
+  grid-template-columns: 1fr 240px;
+  padding: 28px 0;
+  background: transparent;
+}
+.product-row.consult .thumb {
+  display: none;
+}
+.product-row.consult .body {
+  padding-left: 0;
+}
+.product-row.consult .spec {
+  align-self: center;
+}
+
 @media (max-width: 900px) {
   .company-table th {
     width: auto;
@@ -121,5 +136,11 @@
   .contact-checklist li {
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+  .product-row.consult {
+    grid-template-columns: 1fr;
+  }
+  .product-row.consult .spec {
+    width: 100%;
   }
 }
