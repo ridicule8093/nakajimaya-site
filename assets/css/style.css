@@ -97,6 +97,7 @@ h3 { font-size: 17px; }
   font-size: 19px;
   letter-spacing: .08em;
   color: var(--text);
+  flex: 0 0 auto;
 }
 .logo small {
   font-family: var(--sans);
@@ -112,13 +113,14 @@ h3 { font-size: 17px; }
   font-size: 14px;
   color: var(--subtext);
 }
-.nav a { padding: 4px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+.nav a { padding: 4px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; white-space: nowrap; }
 .nav a:hover, .nav a.is-active { color: var(--wood); border-bottom-color: var(--wood); }
 .header-cta {
   display: inline-flex; align-items: center; gap: 6px;
   font-family: var(--sans); font-size: 13px; letter-spacing: .08em;
   font-weight: 700; color: var(--text);
   padding: 8px 14px; border: 1px solid var(--ink);
+  white-space: nowrap;
 }
 .header-cta:hover { background: var(--ink); color: #fff; }
 
@@ -178,7 +180,6 @@ h3 { font-size: 17px; }
   position: relative;
 }
 .hero-photo::after {
-  /* 落款風コーナーマーク */
   content: "中島屋";
   position: absolute;
   right: 14px; bottom: 14px;
@@ -271,14 +272,26 @@ h3 { font-size: 17px; }
 }
 .product-card-body h3 { font-size: 19px; margin-bottom: 8px; }
 .product-card-body p { color: var(--subtext); font-size: 14px; line-height: 1.75; margin: 0; }
-.consult-card {
-  justify-content: center;
-  background: var(--ink);
-  color: #fff;
+.consult-wide {
+  margin-top: 18px;
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  border: 1px solid var(--line);
+  background: var(--surface);
 }
-.consult-card h3 { color: #fff; }
-.consult-card p { color: rgba(255,255,255,.72); }
-.consult-card .product-card-body span { color: rgba(255,255,255,.6); }
+.consult-wide span {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--wood);
+  margin-bottom: 4px;
+}
+.consult-wide h3 { font-size: 19px; margin: 0 0 4px; }
+.consult-wide p { margin: 0; color: var(--subtext); font-size: 14px; line-height: 1.75; max-width: 760px; }
 
 /* ─────────────── Products — 罫線テーブル状 ─────────────── */
 .product-table {
@@ -306,9 +319,9 @@ h3 { font-size: 17px; }
   margin: 0 0 4px;
 }
 .product-row .body .ja-sub {
-  font-family: var(--sans);
+  font-family: var(--latin);
   font-size: 12px;
-  letter-spacing: .08em;
+  letter-spacing: .12em;
   color: var(--wood);
   margin-bottom: 8px;
   display: block;
@@ -329,7 +342,6 @@ h3 { font-size: 17px; }
 .product-row .spec dt { font-size: 12px; letter-spacing: .06em; color: var(--faint); margin-bottom: 2px; font-weight: 700; }
 .product-row .spec dd { margin: 0 0 8px; color: var(--text); }
 
-/* Consultation row — その他 */
 .product-row.consult { background: var(--bg); }
 .product-row.consult .thumb {
   background: var(--muted);
@@ -340,7 +352,7 @@ h3 { font-size: 17px; }
   border: 1px dashed var(--line-strong);
 }
 
-/* ─────────────── About — 縦書き的キャプション ─────────────── */
+/* ─────────────── About ─────────────── */
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, .95fr) minmax(280px, 1.05fr);
@@ -491,10 +503,28 @@ h3 { font-size: 17px; }
 
 /* ─────────────── Responsive ─────────────── */
 @media (max-width: 900px) {
+  .title-bar .container { gap: 10px; overflow: hidden; }
+  .title-bar .crumb-sep,
+  .title-bar .crumb:nth-of-type(2) { display: none; }
+  .header-inner { min-height: auto; padding: 12px 0; flex-wrap: wrap; gap: 12px; }
+  .logo { width: calc(100% - 132px); }
+  .header-cta { margin-left: auto; }
+  .nav {
+    order: 3;
+    width: 100%;
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 8px 0 2px;
+    border-top: 1px solid var(--line-faint);
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav::-webkit-scrollbar { display: none; }
   .hero-grid, .about-grid { grid-template-columns: 1fr; }
   .hero-photo, .home-hero .hero-photo { height: 280px; }
   .section-head-row { grid-template-columns: 1fr; gap: 10px; }
   .product-overview { grid-template-columns: 1fr 1fr; }
+  .consult-wide { align-items: flex-start; flex-direction: column; }
   .product-row { grid-template-columns: 1fr; gap: 14px; }
   .product-row .thumb { height: 200px; }
   .product-row .spec { border-left: none; border-top: 1px solid var(--line); padding: 12px 0 0 0; }
@@ -508,10 +538,16 @@ h3 { font-size: 17px; }
   .flow-row p { grid-column: 2; }
   .contact-strip .container { grid-template-columns: 1fr; gap: 18px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .nav { display: none; }
 }
 
 @media (max-width: 620px) {
+  .title-bar { font-size: 10px; }
+  .title-bar .container { width: min(1120px, calc(100% - 24px)); }
+  .title-bar .crumb:nth-of-type(1) { display: none; }
+  .container { width: min(1120px, calc(100% - 28px)); }
+  .logo { width: 100%; }
+  .header-cta { display: none; }
+  .nav { gap: 16px; }
   .product-overview, .usecase-grid { grid-template-columns: 1fr; }
   .usecase-grid article { border-right: none; }
   .footer-grid { grid-template-columns: 1fr; }
