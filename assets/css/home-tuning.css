@@ -71,6 +71,17 @@
   line-height: 1.82;
 }
 
+.home-products .section-action {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.home-products .section-action .btn.secondary {
+  min-height: 46px;
+  padding: 0 26px;
+  box-shadow: none;
+}
+
 @media (max-width: 900px) {
   .home-hero h1 {
     font-size: clamp(30px, 8vw, 40px);
