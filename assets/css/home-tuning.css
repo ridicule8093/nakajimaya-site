@@ -1,0 +1,95 @@
+/* Home page visual tuning */
+
+.home-hero h1 {
+  font-size: clamp(34px, 4.4vw, 48px);
+  line-height: 1.32;
+}
+
+.home-hero h1 .nowrap {
+  white-space: nowrap;
+}
+
+.home-hero .btn,
+.home-products .consult-wide .btn,
+.home-cta .btn {
+  min-height: 48px;
+  padding: 0 28px;
+  font-size: 14.5px;
+  box-shadow: 0 6px 16px rgba(45, 31, 21, .08);
+}
+
+.home-hero .btn.secondary,
+.home-products .section-action .btn.secondary {
+  background: #fff;
+  border-color: var(--line-strong);
+}
+
+.home-hero .btn.secondary:hover,
+.home-products .section-action .btn.secondary:hover {
+  background: var(--wood);
+  border-color: var(--wood);
+  color: #fff;
+}
+
+.home-products .consult-wide .btn.ghost {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+  flex: 0 0 auto;
+}
+
+.home-products .consult-wide .btn.ghost:hover {
+  background: var(--wood);
+  border-color: var(--wood);
+}
+
+.home-products .product-card-photo {
+  height: 164px;
+}
+
+.home-products .product-card-body {
+  padding: 20px 20px 22px;
+}
+
+.home-products .product-card-body h3 {
+  font-size: 20px;
+  margin-bottom: 9px;
+}
+
+.home-products .product-card-body p {
+  font-size: 14.5px;
+  line-height: 1.82;
+  color: #4f4942;
+}
+
+.home-products .consult-wide {
+  padding: 24px 28px;
+}
+
+.home-products .consult-wide p {
+  font-size: 14.5px;
+  line-height: 1.82;
+}
+
+@media (max-width: 900px) {
+  .home-hero h1 {
+    font-size: clamp(30px, 8vw, 40px);
+  }
+
+  .home-products .consult-wide .btn.ghost {
+    width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .home-hero h1 .nowrap {
+    white-space: normal;
+  }
+
+  .home-hero .btn,
+  .home-products .consult-wide .btn,
+  .home-cta .btn,
+  .home-products .section-action .btn {
+    width: 100%;
+  }
+}
